@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>print page | Eshop</title>
+</head>
+<body style="margin-left: 50px;">
+    <h2> Here is summary of all items in records</h2>
+
+    <br><br><br>
+    <div id="records">
+        {% for record in list %} 
+        ID - {{ record.pID }} | Name -  {{ record.name }} |  Category -  {{ record.category }} | Price -  {{ record.price }} | Quantity -  {{ record.quantity }} <br><br>
+        {% endfor %}
+    </div>
+</body>
+</html>

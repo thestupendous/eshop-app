@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home page | Eshop</title>
+</head>
+<body style="margin-left: 50px;">
+    <h1>Home Page</h1>
+    <p>Welcome to the Eshop portal. One stop for all your daily needs.</p>
+    <br><br><br><br>
+    <form method=GET>
+        <br><input type=submit formaction='/prints' value="Print catalog" />
+    </form><br><br><br><br>
+    <form method=POST>
+        <input type=number placeholder="product ID" name="pID"/> 
+        <input type=text placeholder="name" name="name"/> 
+        <input type=text placeholder="category" name="category" /> 
+        <input type=number step="0.01" placeholder="price" name="price" /> 
+        <input type=number placeholder="quantity" name="quantity"/>
+        <br><br>
+        <input type=submit formaction='/buy' value="Buy items" />
+        <input type=submit formaction='/add' value="Add items" />
+    </form>
+</body>
+</html>

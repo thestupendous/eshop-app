@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: mongo-deployment
+    namespace: ecom-app
+spec:
+  selector:
+    matchLabels:
+      type: back
+  template:
+    metadata:
+      labels:
+        type: back
+    spec:
+      containers:
+      - name: mongo-container
+        image: mongo
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - name: storage
+          mountPath: /data/db
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: backend-pvc

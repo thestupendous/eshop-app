@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>buy page | Eshop</title>
+</head>
+<body style="margin-left: 50px;">
+    <h2> Welcome to the buy area of  eShop portal</h2><br><br><br>
+    {% if error=='true' %} 
+        <h1><font color="#fc3903">  ERROR !! </font></h1> <br><br>
+        {{ message }} <br>
+    {% endif %} 
+
+    {% if error=='false' %}
+    <h1><font color="#41b025">  Success  </font></h1> <br><br>
+        <h3>{{ message }}</h3>
+        <h2> The total amount to be paid is  <b> {{ amount }} </b> </h2>
+    {% endif %}
+</body>
+
+</html>

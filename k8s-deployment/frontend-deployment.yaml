@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-deployment
+  namespace: ecom-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: front
+  template:
+    metadata:
+      labels:
+        type: front
+    spec:
+      containers:
+      - name: front-container
+        image: thestupendous/ecom-app-front:1
+        env:
+          - name: MONGOHOST
+            value: "backend-service"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5005

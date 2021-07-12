@@ -1,0 +1,13 @@
+version: "3" 
+services:
+  mongo-database:
+    image: mongo
+    
+  ecom-front:
+    build: ./
+    environment:
+       - MONGOHOST=mongo-database
+    ports:
+      - "9000:5005"
+    depends_on:
+      - mongo-database
