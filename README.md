@@ -5,7 +5,7 @@ e commerce web app. It is based on microservice architecture
 - make sure docker is installed
 - run this command
   - ` docker-compose up`
-
+  
 
 ## Deploying on Kubernetes
 - make sure kubernetes is installed

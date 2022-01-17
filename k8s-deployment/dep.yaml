@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+   autocert.step.sm/name: flask-webserver.default.svc.cluster.local
+  name: flask-webserver-deployment
+
+
+spec:
+  selector:
+    matchLabels:
+      type: webserver
+  
+  template:
+    metadata:
+      labels:
+        type: webserver
+    spec:
+      containers:
+      - name: flask-webserver-cont
+        image: thestupendous/flask-webserver:2
+        ports:
+        -  containerPort: 9090
+ https://flask-webserver.default.svc.cluster.local
